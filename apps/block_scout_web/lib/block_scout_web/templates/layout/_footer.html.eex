@@ -2,7 +2,9 @@
   <div class="footer-body container">
     <!-- Logo -->
     <div class="row footer-logo-row">
-      <div class="col-md-12">
+   <!--   <div class="col-md-12"> -->
+        <div class="container d-flex align-items-center justify-content-center">
+
         <%= link to: webapp_url(@conn), class: "footer-brand" do %>
           <%= if logo_footer() do %>
             <img class="footer-logo" src="<%= static_path(@conn, logo_footer()) %>" alt="<%= subnetwork_title() %>" />
@@ -18,8 +20,10 @@
     <% col_size = if Enum.empty?(other_explorers), do: 3, else: 2 %>
 
     <div class="row">
-      <div class="col-xs-12 col-lg-3">
-        <p class="footer-info-text"><%= gettext("Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p>
+     <!-- <div class="col-xs-12 col-lg-3"> -->
+     <div class="container d-flex align-items-center justify-content-center">
+
+       <!-- <p class="footer-info-text"><%= gettext("Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p> -->
         <div class="footer-social-icons">
           <a href="<%= Application.get_env(:block_scout_web, :footer)[:github_link] %>" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
             <div class="footer-social-icon-container fontawesome-icon github"></div>
@@ -34,7 +38,7 @@
           <% end %>
         </div>
       </div>
-
+  <!--
       <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
         <h3>BlockScout</h3>
         <ul>
@@ -60,7 +64,7 @@
         </div>
       <% end %>
 
-      <% test_nets = test_nets(other_networks()) %>
+    <% test_nets = test_nets(other_networks()) %>
 
       <%= unless Enum.empty?(test_nets) do %>
         <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
@@ -93,5 +97,6 @@
         <%= gettext("Version") %>: <%= release_link %>
       </div>
     <% end %>
+    -->
   </div>
 </footer>
